@@ -1,0 +1,26 @@
+[default]
+DEBUG = false
+TITLE = "StatusLog"
+EXTENSIONS = [
+    "status_log_api.ext.cors:init_app",
+    "status_log_api.kubeconf:init_app",
+    "status_log_api.blueprints.health:init_app",
+    "status_log_api.blueprints.restapi:init_app",
+    "status_log_api.blueprints.version:init_app",
+]
+
+[development]
+TITLE = "StatusLog"
+EXTENSIONS = [
+    "dynaconf_merge_unique"  # to reuse extensions list from [default]
+]
+DEBUG = true
+
+[testing]
+
+
+[production]
+DEBUG = false
+EXTENSIONS = [
+    "dynaconf_merge_unique"  # to reuse extensions list from [default]
+]
